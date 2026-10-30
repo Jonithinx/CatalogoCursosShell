@@ -28,13 +28,13 @@
                                VerticalOptions="Center" />
                     </Border>
 
-                    <Label Text="Jonathan Rivera"
+                    <Label Text="Jonathan Dubon"
                            FontSize="22"
                            FontAttributes="Bold"
                            TextColor="White"
                            HorizontalOptions="Center" />
 
-                    <Label Text="Estudiante de Ingeniería de Software"
+                    <Label Text="Estudiante de Ingeniería en Sistemas"
                            FontSize="13"
                            TextColor="#EDE7F6"
                            HorizontalOptions="Center" />
@@ -44,7 +44,7 @@
                             BackgroundColor="#3D1D9F"
                             Padding="12,4"
                             HorizontalOptions="Center">
-                        <Label Text="Carnet: 25-0123-2024"
+                        <Label Text="Número de Cuenta: 323590009"
                                FontSize="12"
                                FontAttributes="Bold"
                                TextColor="#D1C4E9" />
@@ -83,10 +83,10 @@
                         BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E24}"
                         Padding="16">
                     <VerticalStackLayout Spacing="4">
-                        <Label Text="CUM Promedio"
+                        <Label Text="Índice Académico"
                                FontSize="12"
                                TextColor="{AppThemeBinding Light=#6B7280, Dark=#9CA3AF}" />
-                        <Label Text="8.9 / 10.0"
+                        <Label Text="Aprobado"
                                FontSize="16"
                                FontAttributes="Bold"
                                TextColor="#00897B" />
@@ -108,13 +108,13 @@
 
                     <Grid ColumnDefinitions="Auto, *" ColumnSpacing="12" RowSpacing="10">
                         <Label Grid.Row="0" Grid.Column="0" Text="📧" FontSize="16" />
-                        <Label Grid.Row="0" Grid.Column="1" Text="jonithinx@gmail.com" FontSize="13" TextColor="{AppThemeBinding Light=#4B5563, Dark=#D1D5DB}" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="323590009@est.ucenm.edu.hn" FontSize="13" TextColor="{AppThemeBinding Light=#4B5563, Dark=#D1D5DB}" />
 
                         <Label Grid.Row="1" Grid.Column="0" Text="🏫" FontSize="16" />
-                        <Label Grid.Row="1" Grid.Column="1" Text="Facultad de Informática y Ciencias Aplicadas" FontSize="13" TextColor="{AppThemeBinding Light=#4B5563, Dark=#D1D5DB}" />
+                        <Label Grid.Row="1" Grid.Column="1" Text="UCENM - Universidad Cristiana Evangélica Nuevo Milenio" FontSize="13" TextColor="{AppThemeBinding Light=#4B5563, Dark=#D1D5DB}" />
 
                         <Label Grid.Row="2" Grid.Column="0" Text="🎓" FontSize="16" />
-                        <Label Grid.Row="2" Grid.Column="1" Text="Modalidad Presencial y Virtual" FontSize="13" TextColor="{AppThemeBinding Light=#4B5563, Dark=#D1D5DB}" />
+                        <Label Grid.Row="2" Grid.Column="1" Text="Ingeniería en Sistemas" FontSize="13" TextColor="{AppThemeBinding Light=#4B5563, Dark=#D1D5DB}" />
                     </Grid>
                 </VerticalStackLayout>
             </Border>

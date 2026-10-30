@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CatalogoCursosShell.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:CatalogoCursosShell.Views"
+    Title="Catálogo de Cursos"
+    FlyoutBehavior="Flyout">
+
+    <!-- Encabezado descriptivo del menú lateral -->
+    <Shell.FlyoutHeader>
+        <Border StrokeThickness="0"
+                BackgroundColor="#512BD4"
+                Padding="24,40,24,24">
+            <VerticalStackLayout Spacing="10">
+                <Border StrokeThickness="2"
+                        Stroke="White"
+                        StrokeShape="RoundRectangle 30"
+                        HeightRequest="60"
+                        WidthRequest="60"
+                        BackgroundColor="#673AB7"
+                        HorizontalOptions="Start">
+                    <Label Text="🎓"
+                           FontSize="30"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+                </Border>
+                <Label Text="Portal Académico"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="White" />
+                <Label Text="Gestión y Catálogo de Cursos MAUI"
+                       FontSize="13"
+                       TextColor="#EDE7F6" />
+                <BoxView HeightRequest="1"
+                         BackgroundColor="#7E57C2"
+                         Margin="0,8,0,0" />
+            </VerticalStackLayout>
+        </Border>
+    </Shell.FlyoutHeader>
+
+    <!-- TabBar Principal con 3 pestañas -->
+    <TabBar>
+        <Tab Title="Inicio" Route="inicio" Icon="dotnet_bot.png">
+            <ShellContent ContentTemplate="{DataTemplate views:InicioPage}" />
+        </Tab>
+        <Tab Title="Cursos" Route="cursos" Icon="dotnet_bot.png">
+            <ShellContent ContentTemplate="{DataTemplate views:CursosPage}" />
+        </Tab>
+        <Tab Title="Perfil" Route="perfil" Icon="dotnet_bot.png">
+            <ShellContent ContentTemplate="{DataTemplate views:PerfilPage}" />
+        </Tab>
+    </TabBar>
+
+    <!-- FlyoutItem hacia "Acerca de" -->
+    <FlyoutItem Title="Acerca de" Icon="dotnet_bot.png">
+        <ShellContent Route="acerca" ContentTemplate="{DataTemplate views:AcercaPage}" />
+    </FlyoutItem>
+
+    <!-- MenuItem para Salir -->
+    <MenuItem Text="Salir"
+              IconImageSource="dotnet_bot.png"
+              Clicked="OnSalirClicked" />
+
+</Shell>

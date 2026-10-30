@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:CatalogoCursosShell.Models"
+             x:Class="CatalogoCursosShell.Views.CursosPage"
+             Title="Catálogo de Cursos"
+             BackgroundColor="{AppThemeBinding Light=#F4F6F9, Dark=#121214}">
+
+    <Grid RowDefinitions="Auto, *">
+        <!-- Barra Superior Informativa -->
+        <Border Grid.Row="0"
+                StrokeThickness="0"
+                BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E24}"
+                Padding="16,12">
+            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                <Label Text="📖" FontSize="20" VerticalOptions="Center" />
+                <Label x:Name="lblContador"
+                       Text="Cargando cursos..."
+                       FontSize="14"
+                       FontAttributes="Bold"
+                       TextColor="{AppThemeBinding Light=#4B5563, Dark=#D1D5DB}"
+                       VerticalOptions="Center" />
+            </HorizontalStackLayout>
+        </Border>
+
+        <!-- CollectionView de Cursos -->
+        <CollectionView Grid.Row="1"
+                        x:Name="cvCursos"
+                        SelectionMode="Single"
+                        SelectionChanged="OnCursoSelected"
+                        ItemsSource="{Binding .}">
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout Spacing="10"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"
+                                     Padding="40">
+                    <Label Text="📂" FontSize="48" HorizontalOptions="Center" />
+                    <Label Text="No hay cursos disponibles"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light=#6B7280, Dark=#9CA3AF}"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Curso">
+                    <Grid Padding="16,8">
+                        <Border StrokeThickness="1"
+                                Stroke="{AppThemeBinding Light=#E5E7EB, Dark=#27272A}"
+                                StrokeShape="RoundRectangle 16"
+                                BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E24}"
+                                Padding="18">
+                            <Border.Shadow>
+                                <Shadow Brush="Black"
+                                        Opacity="0.06"
+                                        Radius="8"
+                                        Offset="0,3" />
+                            </Border.Shadow>
+
+                            <VerticalStackLayout Spacing="10">
+                                <!-- Fila Superior: Badge de Créditos y Número de ID -->
+                                <Grid ColumnDefinitions="*, Auto">
+                                    <HorizontalStackLayout Grid.Column="0" Spacing="6" VerticalOptions="Center">
+                                        <Border StrokeThickness="0"
+                                                StrokeShape="RoundRectangle 8"
+                                                BackgroundColor="#EDE7F6"
+                                                Padding="8,4">
+                                            <Label Text="{Binding Id, StringFormat='ID: #{0}'}"
+                                                   FontSize="11"
+                                                   FontAttributes="Bold"
+                                                   TextColor="#512BD4" />
+                                        </Border>
+                                    </HorizontalStackLayout>
+
+                                    <Border Grid.Column="1"
+                                            StrokeThickness="0"
+                                            StrokeShape="RoundRectangle 8"
+                                            BackgroundColor="#E0F2F1"
+                                            Padding="10,4">
+                                        <Label Text="{Binding Creditos, StringFormat='{0} Créditos'}"
+                                               FontSize="12"
+                                               FontAttributes="Bold"
+                                               TextColor="#00695C" />
+                                    </Border>
+                                </Grid>
+
+                                <!-- Título del Curso -->
+                                <Label Text="{Binding Nombre}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="{AppThemeBinding Light=#111827, Dark=#F9FAFB}" />
+
+                                <!-- Docente -->
+                                <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                                    <Label Text="👨‍🏫" FontSize="14" VerticalOptions="Center" />
+                                    <Label Text="{Binding Docente}"
+                                           FontSize="13"
+                                           TextColor="{AppThemeBinding Light=#4B5563, Dark=#D1D5DB}"
+                                           FontAttributes="Italic"
+                                           VerticalOptions="Center" />
+                                </HorizontalStackLayout>
+
+                                <!-- Descripción corta -->
+                                <Label Text="{Binding Descripcion}"
+                                       FontSize="13"
+                                       TextColor="{AppThemeBinding Light=#6B7280, Dark=#9CA3AF}"
+                                       MaxLines="2"
+                                       LineBreakMode="TailTruncation" />
+
+                                <!-- Separador sutil -->
+                                <BoxView HeightRequest="1"
+                                         BackgroundColor="{AppThemeBinding Light=#F3F4F6, Dark=#27272A}"
+                                         Margin="0,4" />
+
+                                <!-- Botón de acción para Ver Detalle -->
+                                <Button Text="Ver Detalle →"
+                                        BackgroundColor="#512BD4"
+                                        TextColor="White"
+                                        FontAttributes="Bold"
+                                        CornerRadius="10"
+                                        HeightRequest="42"
+                                        CommandParameter="{Binding .}"
+                                        Clicked="OnVerDetalleClicked" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

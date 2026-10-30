@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CatalogoCursosShell.Views.PerfilPage"
+             Title="Mi Perfil"
+             BackgroundColor="{AppThemeBinding Light=#F4F6F9, Dark=#121214}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+
+            <!-- Tarjeta de Perfil del Estudiante -->
+            <Border StrokeThickness="0"
+                    StrokeShape="RoundRectangle 16"
+                    BackgroundColor="#512BD4"
+                    Padding="24">
+                <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
+                    <!-- Avatar Circular -->
+                    <Border StrokeThickness="3"
+                            Stroke="White"
+                            StrokeShape="RoundRectangle 45"
+                            HeightRequest="90"
+                            WidthRequest="90"
+                            BackgroundColor="#673AB7"
+                            HorizontalOptions="Center">
+                        <Label Text="👨‍💻"
+                               FontSize="42"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                    </Border>
+
+                    <Label Text="Jonathan Rivera"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+
+                    <Label Text="Estudiante de Ingeniería de Software"
+                           FontSize="13"
+                           TextColor="#EDE7F6"
+                           HorizontalOptions="Center" />
+
+                    <Border StrokeThickness="0"
+                            StrokeShape="RoundRectangle 8"
+                            BackgroundColor="#3D1D9F"
+                            Padding="12,4"
+                            HorizontalOptions="Center">
+                        <Label Text="Carnet: 25-0123-2024"
+                               FontSize="12"
+                               FontAttributes="Bold"
+                               TextColor="#D1C4E9" />
+                    </Border>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Datos Académicos -->
+            <Label Text="Información Académica"
+                   FontSize="17"
+                   FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light=#1F2937, Dark=#F9FAFB}" />
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12" RowSpacing="12">
+                <Border Grid.Column="0"
+                        StrokeThickness="1"
+                        Stroke="{AppThemeBinding Light=#E5E7EB, Dark=#27272A}"
+                        StrokeShape="RoundRectangle 12"
+                        BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E24}"
+                        Padding="16">
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="Ciclo Actual"
+                               FontSize="12"
+                               TextColor="{AppThemeBinding Light=#6B7280, Dark=#9CA3AF}" />
+                        <Label Text="Ciclo II - 2026"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#512BD4" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Grid.Column="1"
+                        StrokeThickness="1"
+                        Stroke="{AppThemeBinding Light=#E5E7EB, Dark=#27272A}"
+                        StrokeShape="RoundRectangle 12"
+                        BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E24}"
+                        Padding="16">
+                    <VerticalStackLayout Spacing="4">
+                        <Label Text="CUM Promedio"
+                               FontSize="12"
+                               TextColor="{AppThemeBinding Light=#6B7280, Dark=#9CA3AF}" />
+                        <Label Text="8.9 / 10.0"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#00897B" />
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+
+            <!-- Detalles Institucionales -->
+            <Border StrokeThickness="1"
+                    Stroke="{AppThemeBinding Light=#E5E7EB, Dark=#27272A}"
+                    StrokeShape="RoundRectangle 14"
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E24}"
+                    Padding="18">
+                <VerticalStackLayout Spacing="14">
+                    <Label Text="Detalles del Alumno"
+                           FontSize="15"
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light=#111827, Dark=#F9FAFB}" />
+
+                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="12" RowSpacing="10">
+                        <Label Grid.Row="0" Grid.Column="0" Text="📧" FontSize="16" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="jonithinx@gmail.com" FontSize="13" TextColor="{AppThemeBinding Light=#4B5563, Dark=#D1D5DB}" />
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="🏫" FontSize="16" />
+                        <Label Grid.Row="1" Grid.Column="1" Text="Facultad de Informática y Ciencias Aplicadas" FontSize="13" TextColor="{AppThemeBinding Light=#4B5563, Dark=#D1D5DB}" />
+
+                        <Label Grid.Row="2" Grid.Column="0" Text="🎓" FontSize="16" />
+                        <Label Grid.Row="2" Grid.Column="1" Text="Modalidad Presencial y Virtual" FontSize="13" TextColor="{AppThemeBinding Light=#4B5563, Dark=#D1D5DB}" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

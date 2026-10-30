@@ -1,0 +1,28 @@
+## Visual Studio & .NET MAUI .gitignore
+
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.userprefs
+*.suo
+*.ide/
+*.swp
+*.lock
+*.log
+.DS_Store
+Thumbs.db
+
+# Android
+*.apk
+*.aab
+
+# iOS / MacCatalyst
+*.ipa
+*.app
+
+# Windows
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+_pkginfo.txt

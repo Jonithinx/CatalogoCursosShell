@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CatalogoCursosShell.Views.InicioPage"
+             Title="Inicio"
+             BackgroundColor="{AppThemeBinding Light=#F4F6F9, Dark=#121214}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+
+            <!-- Hero Banner -->
+            <Border StrokeThickness="0"
+                    StrokeShape="RoundRectangle 16"
+                    BackgroundColor="#512BD4"
+                    Padding="24">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="BIENVENIDO A"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           TextColor="#D1C4E9"
+                           CharacterSpacing="1.5" />
+                    <Label Text="Catálogo Académico"
+                           FontSize="26"
+                           FontAttributes="Bold"
+                           TextColor="White" />
+                    <Label Text="Explora, gestiona y actualiza los cursos de tu plan de estudios de forma ágil e intuitiva."
+                           FontSize="14"
+                           TextColor="#EDE7F6"
+                           LineHeight="1.2" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Métricas / Indicadores Rápidos -->
+            <Label Text="Resumen General"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light=#1F2937, Dark=#F9FAFB}" />
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="14" RowSpacing="14">
+                <!-- Tarjeta 1: Cursos Totales -->
+                <Border Grid.Column="0"
+                        StrokeThickness="1"
+                        Stroke="{AppThemeBinding Light=#E5E7EB, Dark=#27272A}"
+                        StrokeShape="RoundRectangle 14"
+                        BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E24}"
+                        Padding="16">
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="📚" FontSize="26" />
+                        <Label x:Name="lblTotalCursos"
+                               Text="6"
+                               FontSize="28"
+                               FontAttributes="Bold"
+                               TextColor="#512BD4" />
+                        <Label Text="Cursos Activos"
+                               FontSize="13"
+                               TextColor="{AppThemeBinding Light=#6B7280, Dark=#9CA3AF}" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Tarjeta 2: Créditos -->
+                <Border Grid.Column="1"
+                        StrokeThickness="1"
+                        Stroke="{AppThemeBinding Light=#E5E7EB, Dark=#27272A}"
+                        StrokeShape="RoundRectangle 14"
+                        BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E24}"
+                        Padding="16">
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="🎯" FontSize="26" />
+                        <Label x:Name="lblTotalCreditos"
+                               Text="22"
+                               FontSize="28"
+                               FontAttributes="Bold"
+                               TextColor="#00897B" />
+                        <Label Text="Créditos Totales"
+                               FontSize="13"
+                               TextColor="{AppThemeBinding Light=#6B7280, Dark=#9CA3AF}" />
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+
+            <!-- Acceso Directo -->
+            <Border StrokeThickness="1"
+                    Stroke="{AppThemeBinding Light=#E5E7EB, Dark=#27272A}"
+                    StrokeShape="RoundRectangle 14"
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E24}"
+                    Padding="20">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Acción Rápida"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light=#1F2937, Dark=#F9FAFB}" />
+                    <Label Text="Accede al catálogo completo para revisar los detalles y actualizar la información de cada materia."
+                           FontSize="13"
+                           TextColor="{AppThemeBinding Light=#6B7280, Dark=#9CA3AF}" />
+                    <Button Text="Ir al Catálogo de Cursos"
+                            BackgroundColor="#512BD4"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="10"
+                            HeightRequest="46"
+                            Clicked="OnIrACursosClicked" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Novedad Académica -->
+            <Border StrokeThickness="1"
+                    Stroke="{AppThemeBinding Light=#E5E7EB, Dark=#27272A}"
+                    StrokeShape="RoundRectangle 14"
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E24}"
+                    Padding="18">
+                <HorizontalStackLayout Spacing="14" VerticalOptions="Center">
+                    <Border StrokeThickness="0"
+                            StrokeShape="RoundRectangle 10"
+                            BackgroundColor="#EDE7F6"
+                            HeightRequest="48"
+                            WidthRequest="48"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                        <Label Text="💡"
+                               FontSize="22"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                    </Border>
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="2">
+                        <Label Text="Navegación con Shell"
+                               FontAttributes="Bold"
+                               FontSize="14"
+                               TextColor="{AppThemeBinding Light=#1F2937, Dark=#F9FAFB}" />
+                        <Label Text="Usa las pestañas inferiores o el menú lateral (Flyout)."
+                               FontSize="12"
+                               TextColor="{AppThemeBinding Light=#6B7280, Dark=#9CA3AF}" />
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

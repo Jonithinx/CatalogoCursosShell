@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CatalogoCursosShell.Views.EditarCursoPage"
+             Title="Editar Curso"
+             BackgroundColor="{AppThemeBinding Light=#F4F6F9, Dark=#121214}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="18" Padding="20">
+
+            <!-- Banner Informativo -->
+            <Border StrokeThickness="0"
+                    StrokeShape="RoundRectangle 14"
+                    BackgroundColor="#512BD4"
+                    Padding="18">
+                <Grid ColumnDefinitions="*, Auto">
+                    <VerticalStackLayout Grid.Column="0" Spacing="4">
+                        <Label Text="MODO EDICIÓN"
+                               FontSize="11"
+                               FontAttributes="Bold"
+                               TextColor="#D1C4E9"
+                               CharacterSpacing="1.2" />
+                        <Label Text="Modificar Información"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="White" />
+                    </VerticalStackLayout>
+                    <Border Grid.Column="1"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 8"
+                            BackgroundColor="#3D1D9F"
+                            Padding="10,6"
+                            VerticalOptions="Center">
+                        <Label x:Name="lblIdCurso"
+                               Text="ID: #0"
+                               FontSize="12"
+                               FontAttributes="Bold"
+                               TextColor="#EDE7F6" />
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!-- Formulario de Edición -->
+            <Border StrokeThickness="1"
+                    Stroke="{AppThemeBinding Light=#E5E7EB, Dark=#27272A}"
+                    StrokeShape="RoundRectangle 16"
+                    BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E24}"
+                    Padding="20">
+                <VerticalStackLayout Spacing="16">
+
+                    <!-- Campo: Nombre -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Nombre de la Asignatura *"
+                               FontSize="13"
+                               FontAttributes="Bold"
+                               TextColor="{AppThemeBinding Light=#374151, Dark=#D1D5DB}" />
+                        <Border StrokeThickness="1"
+                                Stroke="{AppThemeBinding Light=#D1D5DB, Dark=#374151}"
+                                StrokeShape="RoundRectangle 8"
+                                Padding="12,2">
+                            <Entry x:Name="txtNombre"
+                                   Placeholder="Ej. Programación Móvil II"
+                                   FontSize="14"
+                                   TextColor="{AppThemeBinding Light=#111827, Dark=#F9FAFB}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- Campo: Docente -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Docente Titular *"
+                               FontSize="13"
+                               FontAttributes="Bold"
+                               TextColor="{AppThemeBinding Light=#374151, Dark=#D1D5DB}" />
+                        <Border StrokeThickness="1"
+                                Stroke="{AppThemeBinding Light=#D1D5DB, Dark=#374151}"
+                                StrokeShape="RoundRectangle 8"
+                                Padding="12,2">
+                            <Entry x:Name="txtDocente"
+                                   Placeholder="Ej. Ing. Carlos Menjívar"
+                                   FontSize="14"
+                                   TextColor="{AppThemeBinding Light=#111827, Dark=#F9FAFB}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- Campo: Créditos -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Créditos Académicos (1 a 10) *"
+                               FontSize="13"
+                               FontAttributes="Bold"
+                               TextColor="{AppThemeBinding Light=#374151, Dark=#D1D5DB}" />
+                        <Border StrokeThickness="1"
+                                Stroke="{AppThemeBinding Light=#D1D5DB, Dark=#374151}"
+                                StrokeShape="RoundRectangle 8"
+                                Padding="12,2">
+                            <Entry x:Name="txtCreditos"
+                                   Placeholder="Ej. 4"
+                                   Keyboard="Numeric"
+                                   FontSize="14"
+                                   TextColor="{AppThemeBinding Light=#111827, Dark=#F9FAFB}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- Campo: Descripción -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Descripción del Programa *"
+                               FontSize="13"
+                               FontAttributes="Bold"
+                               TextColor="{AppThemeBinding Light=#374151, Dark=#D1D5DB}" />
+                        <Border StrokeThickness="1"
+                                Stroke="{AppThemeBinding Light=#D1D5DB, Dark=#374151}"
+                                StrokeShape="RoundRectangle 8"
+                                Padding="12,4">
+                            <Editor x:Name="txtDescripcion"
+                                    Placeholder="Ingrese los detalles y objetivos del curso..."
+                                    HeightRequest="110"
+                                    AutoSize="Disabled"
+                                    FontSize="14"
+                                    TextColor="{AppThemeBinding Light=#111827, Dark=#F9FAFB}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Acciones -->
+            <VerticalStackLayout Spacing="12">
+                <Button Text="💾 Guardar Cambios"
+                        BackgroundColor="#00897B"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        CornerRadius="12"
+                        HeightRequest="48"
+                        Clicked="OnGuardarClicked" />
+
+                <Button Text="Cancelar"
+                        BackgroundColor="Transparent"
+                        TextColor="{AppThemeBinding Light=#6B7280, Dark=#9CA3AF}"
+                        BorderColor="{AppThemeBinding Light=#D1D5DB, Dark=#374151}"
+                        BorderWidth="1"
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        CornerRadius="12"
+                        HeightRequest="46"
+                        Clicked="OnCancelarClicked" />
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
